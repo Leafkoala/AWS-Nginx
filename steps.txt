@@ -51,7 +51,7 @@ STEP 17: INSERT Command: sudo systemctl enable nginx. press enter.
    #It can also be checked with this command: nginx <python3, apache2, or even aws cli> --version  (it works for all installation in the parenthesis)
 
 
-STEP 18: Go Back to your Instances on your aws EC2 instance and click on the instance you have just created. copy the IPv4 address to your browser and watch it work
+STEP 18: Go Back to your Instances on your aws EC2 instance and click on the instance you have just created. copy the public IPv4 address to your browser and watch it work
 
 
 

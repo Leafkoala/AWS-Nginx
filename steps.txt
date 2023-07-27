@@ -1,3 +1,13 @@
+STEPS TO CREATE IAM USER
+1. Please make sure you have a root user:
+  $$HOW TO CREATE A ROOT USER ON AWS 
+1. Open this link on your browser https://aws.amazon.com
+2. On the site, click on 'Get Started for free' then click on 'Create Free Account'
+3. You will be taken to a page to sign up. Use an existing email account you have access to and fill in the name of your choice
+4. Input the verification code sent to your email. Create a password for your root account.
+5. fill in your accurate information in the site and make sure you tick the box for 'personal -for your own projects'
+
+
 STEPS TO INSTALL NGINX ON YOUR AWS SERVER
 STEP 1: Login to your aws iam account
 STEP 2: Once you have logged in, make sure your account has admin and EC2 access. Then search for EC2 and press enter
@@ -25,7 +35,7 @@ sudo apt install -y apache 2
 systemcti start apache2
 
 #this will input hello class into/var/www/html
-echo"<p>Hello Class</p>" >/var/www/html/index.html
+echo "<p>Hello Class</p>" > /var/www/html/index.html
 
 STEP 11: launch Instance
 STEP 12: CONNECT TO INSTANCE, then click on connect in the next page. It will open a new tab

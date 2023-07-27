@@ -1,0 +1,51 @@
+STEPS TO INSTALL NGINX ON YOUR AWS SERVER
+STEP 1: Login to your aws iam account
+STEP 2: Once you have logged in, make sure your account has admin and EC2 access. Then search for EC2 and press enter
+STEP 3: Open EC2 and scroll down to Resources, then click on "Lanuch Instance" to launch an instance. It would take you to a new page.
+STEP 4: Create a name for your server and click on the OsImage of your choice. <I used Ubuntu OS>
+STEP 5: Scroll down to the Amazon Machine Image (AMI), and use a free tier eligible (ami) or if you can afford it go for the others.
+STEP 6: On the Instance type, make use of t2 Micro or any free elgible one available
+STEP 7: On the Keypair, click on procced without a key pair
+STEP 8: On the firewall (security groups), Click on "create security group" and allow all traffic form to allow access on the interent.
+STEP 9: ON Configure storage use the default GiB (gb3 or gb2)
+STEP 10: On advance details, copy down this code or you could as well not on the user data file: (USE THIS STEP ONLY FOR APACHE, IF NOT SKIP STEP)
+         this is the user data used:
+#!/bin/bash
+
+#this will update the server
+sudo apt -y update
+
+# this will upgrade the server
+sudo apt -y upgrade
+
+#this will install apache proxy server
+sudo apt install -y apache 2
+
+#this will start the apache2 service
+systemcti start apache2
+
+#this will input hello class into/var/www/html
+echo"<p>Hello Class</p>" >/var/www/html/index.html
+
+STEP 11: launch Instance
+STEP 12: CONNECT TO INSTANCE, then click on connect in the next page. It will open a new tab
+STEP 13: The new tab will open a console for you to write your commands. Type in "sudo apt update" (using apt for Ubuntu Os...it won't work on other Os. use "yum" for Amazon linux) press enter after the command and y if asked.
+STEP 14: insert this command ("sudo apt<yum- for amazon linux> upgrade") then press enter. type in y for anywhere asked.
+STEP 15: INSERT Command: sudo apt<yum for amazon linux> install nginx. press enter then type in y for anywhere asked.
+STEP 16: INSER Command: sudo systemctl start nginx. press enter.
+STEP 17: INSERT Command: sudo systemctl enable nginx. press enter.
+
+  # Congratulations you have now set up an NGINX web server on your AWS instance, and it is ready to serve web content. You can now deploy your web applications or static files to the server.
+  
+   #To check if it has been installed write this command: sudo systemctl status nginx.
+   #It can also be checked with this command: nginx <python3, apache2, or even aws cli> --version  (it works for all installation in the parenthesis)
+
+
+STEP 18: Go Back to your Instances on your aws EC2 instance and click on the instance you have just created. copy the IPv4 address to your browser and watch it work
+
+
+
+
+      ##IF YOU WANT TO INSTALL PYTHON 3 ON YOUR AWS SERVER, do all steps till step 9. Contunue from Step 11 and change 'nginx' to python3. (Do this for both amazon linux and Ubuntu Instances. ENJOY!!) 
+      
+      ## STEP 10 SHOULD ONLY BE USED FOR apache2
